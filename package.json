@@ -1,0 +1,40 @@
+{
+  "name": "ab-fs",
+  "version": "0.0.1",
+  "description": "File system functions wrapper.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allblue-pl/node_ab-fs.git"
+  },
+  "keywords": [
+    "file",
+    "system",
+    "operations",
+    "read",
+    "write",
+    "exists",
+    "match",
+    "matching",
+    "files",
+    "fs",
+    "pattern",
+    "patterns",
+    "chokidar",
+    "anymatch"
+  ],
+  "author": "Jakub Zolcik (AllBlue)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allblue-pl/node_ab-fs/issues"
+  },
+  "homepage": "https://github.com/allblue-pl/node_ab-fs#readme",
+  "dependencies": {
+    "ab-log": "0.1.*",
+    "ab-fs-matcher": "0.0.*",
+    "ab-fs-watcher": "0.0.*"
+  }
+}
