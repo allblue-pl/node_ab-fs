@@ -1,0 +1,6 @@
+{
+    "abDependencies": {
+        "ab-fs-matcher": "https://github.com/allblue-pl/node_ab-fs-matcher",
+        "ab-fs-watcher": "https://github.com/allblue-pl/node_ab-fs-watcher"
+    }
+}

@@ -1,6 +1,6 @@
 {
   "name": "ab-fs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "File system functions wrapper.",
   "main": "index.js",
   "scripts": {
