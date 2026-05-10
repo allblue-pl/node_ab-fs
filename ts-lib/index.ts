@@ -1,31 +1,43 @@
 import fs from "fs";
 import path from "path";
+
 import abFSMatcher, { abFSMatcher_Class } from "ab-fs-matcher";
 import abFSWatcher, { abFSWatcher_Class } from "ab-fs-watcher";
-import dir, { dir_Class } from "./dir.js";
-import file, { file_Class } from "./file.js";
+
+import dir, { dir_Class } from "./dir.ts";
+import file, { file_Class } from "./file.ts";
+
 export class abFS_Class {
-    get dir() {
+    get dir(): dir_Class {
         return dir;
     }
-    get file() {
+
+    get file(): file_Class {
         return file;
     }
+
+
     constructor() {
+
     }
-    copySync(fsSrcPath, fsDestPath) {
+
+    copySync(fsSrcPath: string, fsDestPath: string) {
         if (!fs.existsSync(fsSrcPath))
             throw new Error(`Cannot copy '${fsSrcPath}'. Path does not exist.`);
+
         let fsDestPath_Dir = path.dirname(fsDestPath);
         if (!fs.existsSync(fsDestPath_Dir))
             this.mkdirRecursiveSync(fsDestPath_Dir);
+
         let lstat = fs.lstatSync(fsSrcPath);
         if (lstat.isSymbolicLink())
             return;
+
         if (lstat.isFile()) {
             fs.copyFileSync(fsSrcPath, fsDestPath);
             return;
         }
+
         if (lstat.isDirectory()) {
             if (!fs.existsSync(fsDestPath))
                 this.mkdirRecursiveSync(fsDestPath);
@@ -35,27 +47,35 @@ export class abFS_Class {
             });
         }
     }
-    existsDirSync(fsDirPath) {
+
+    existsDirSync(fsDirPath: string) {
         return dir.existsSync(fsDirPath);
     }
-    existsFile_Async(fsFilePath) {
+
+    existsFile_Async(fsFilePath: string) {
         return file.exists_Async(fsFilePath);
     }
-    mkdirRecursiveSync(dirPath) {
+
+    mkdirRecursiveSync(dirPath: string) {
         dir.createRecursiveSync(dirPath);
     }
-    removeSync(fsPath) {
+
+    removeSync(fsPath: string) {
         let lstat = fs.lstatSync(fsPath);
         if (lstat.isSymbolicLink())
             return;
+
         if (lstat.isFile())
             fs.unlinkSync(fsPath);
+
         if (lstat.isDirectory())
             this.rmdirRecursiveSync(fsPath);
     }
-    rmdirRecursiveSync(dirPath) {
+
+    rmdirRecursiveSync(dirPath: string) {
         dir.removeRecursiveSync(dirPath);
     }
+
 }
 const abFS = new abFS_Class();
 export default abFS;

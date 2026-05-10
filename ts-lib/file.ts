@@ -1,14 +1,14 @@
 import fs from "node:fs";
+
 export class file_Class {
-    exists_Async(fsPath) {
+    exists_Async(fsPath: string) {
         return new Promise((resolve, reject) => {
             fs.lstat(fsPath, (err, stat) => {
                 if (err !== null) {
-                    resolve(false);
-                    return;
+                    resolve(false); return;
                 }
-                resolve(stat.isFile());
-                return;
+
+                resolve(stat.isFile()); return;
             });
         });
     }

@@ -1,0 +1,1 @@
+{"version":3,"file":"dir.d.ts","sourceRoot":"","sources":["../ts-lib/dir.ts"],"names":[],"mappings":"AAGA,qBAAa,SAAS;IAClB,mBAAmB,CAAC,OAAO,EAAE,MAAM;IAqBnC,UAAU,CAAC,OAAO,EAAE,MAAM;IAS1B,mBAAmB,CAAC,OAAO,EAAE,MAAM;CAmBtC;AACD,QAAA,MAAM,GAAG,WAAkB,CAAC;AAC5B,eAAe,GAAG,CAAC"}
