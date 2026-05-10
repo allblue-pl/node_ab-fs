@@ -1,9 +1,6 @@
 import fs from "fs";
 import path from "path";
 
-import abFSMatcher, { abFSMatcher_Class } from "ab-fs-matcher";
-import abFSWatcher, { abFSWatcher_Class } from "ab-fs-watcher";
-
 import dir, { dir_Class } from "./dir.ts";
 import file, { file_Class } from "./file.ts";
 
